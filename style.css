@@ -372,3 +372,89 @@ nav .hire-btn button:hover::before{
 #services .cont-services .service h3{
     color: rgb(206, 89, 0);
 }
+
+
+/* style de la partie SKILLS */
+
+#skills{
+    height: 85vh;
+    background: rgb(5, 5, 76);
+    align-items: center;
+    text-align: center;
+    padding: 20px 150px;
+    color: #fff;
+}
+#skills h2{
+    position: relative;
+}
+#skills h2 span{
+    color: rgb(206, 89, 0);
+}
+#skills h2::after{
+    content: '';
+    align-items: center;
+    text-align: center;
+    margin-left: 42.5%;
+    height: 3px;
+    display: block;
+    background: #fff;
+    width: 15%;
+}
+
+#skills .container-element{
+    margin-top: 5%;
+    width: 100%;
+    display: block;
+}
+#skills .container-element .element{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 10px;
+}
+#skills .container-element .element .langage{
+    width: 20vh;
+    text-align: left;
+}
+#skills .container-element .element .cont-progress{
+    width: 100vh;
+    height: 14px;
+    background: #8f8f8f7b;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    text-align: center;
+    margin: 0px 5%;
+}
+#skills .container-element .element .cont-progress .progress{
+    height: 8px;
+    border-radius: 10px;
+    background: rgb(206, 89, 0);
+}
+#skills .container-element .element .cont-progress .html{
+    width: 87%;
+}
+#skills .container-element .element .cont-progress .css{
+    width: 70%;
+}
+#skills .container-element .element .cont-progress .js{
+    width: 69%;
+}
+#skills .container-element .element .cont-progress .php{
+    width: 65%;
+}
+#skills .container-element .element .cont-progress .mysql{
+    width: 73%;
+}
+#skills .container-element .element .cont-progress .sql{
+    width: 60%;
+}
+#skills .container-element .element .cont-progress .sass{
+    width: 70%;
+}
+#skills .container-element .element .cont-progress .git{
+    width: 80%;
+}
+#skills .container-element .element .cont-progress .bootstrap{
+    width: 60%;
+}
