@@ -1,0 +1,302 @@
+/* importation de font "OSWALD" */
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
+
+::-webkit-scrollbar {
+    width: 10px;
+  }
+  ::-webkit-scrollbar-thumb{
+    background: rgb(206, 89, 0);
+    border-radius: 10px;
+    margin-right: 3px;
+    cursor: pointer;
+  }
+  ::-webkit-scrollbar-track {  
+    background: #f1f1f1; 
+  } 
+  html{
+    scroll-behavior: smooth;
+  }
+/* style de la partie de la barre de navigation */
+
+*,::after,::before{
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}  
+
+nav{
+    height: 10vh;
+    position: sticky;
+    top: 0px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    padding: 0px 100px;
+    background: rgb(5, 5, 76);
+    justify-content: space-between;
+    box-shadow: 1px 1px 3px #110016ed;
+    z-index: 5;
+}
+nav .nav-name{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+}
+nav .nav-name img{
+    width: 40px;
+    margin-right: 10px;
+}
+nav .nav-name h3{
+    font-size: 1.5rem;
+    color: #fff;
+}
+nav .nav-name h3 span{
+    color: rgb(206, 89, 0);
+}
+nav ul{
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+nav ul li{
+    margin-left: 25px;
+}
+nav ul li a{
+    text-decoration: none;
+    color: #fff;
+    font-weight: 400;
+}
+nav ul li a:hover{
+    color: rgb(206, 89, 0);
+    transition: .3s;
+}
+nav .hire-btn{
+    width: 20vh;
+    height: 6vh;
+    /* background: #000; */
+    border-radius: 30px;
+    border: 1px solid #fff;
+}
+nav .hire-btn button{
+    z-index: 1;
+}
+nav .hire-btn button:hover{
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    transition: .5s;
+    color: rgb(5, 5, 76);
+}
+
+nav .hire-btn button{
+    position: relative;
+    cursor:pointer;
+    z-index: 1;
+    width: 20vh;
+    height: 100%;
+    background: transparent;
+    color: #fff;
+    border-radius: 30px;
+    outline: none;
+    font-weight: 600;
+    border: none;
+}
+nav .hire-btn button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 0;
+    height: 100%;
+    border-radius: 30px;
+    background: #fff;
+    z-index: -1;
+    transition: 0.5s;
+}
+nav .hire-btn button:hover::before{
+    width: 100%;
+}
+
+/* style de la partie d'accueil */
+
+#home{
+    height: 80vh;
+    background-image: linear-gradient(to right, #240048ed, #110016ed);
+    padding: 50px 100px 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+}
+
+/* style de la partie left sous element de home */
+#home .left{
+    width: 50%;
+}
+#home .left h2{
+    font-size: 2rem;
+}
+#home .left h3{
+    font-size: 1.3rem;
+}
+#home .left h2, p{
+    margin: 10px 0px;
+}
+#home .left span{
+    color: rgb(206, 89, 0);
+}
+#home .left .socio-media{
+    display: flex;
+    margin: 15px 0px;
+}
+#home .left .socio-media .media {
+    width: 20px;
+    height: 20px;
+    padding: 5px;
+    border-radius: 50px;
+    border: 1px solid #fff;
+    align-items: center;
+    text-align: center;
+    margin-right: 20px;
+    cursor: pointer;
+}
+#home .left .socio-media .media a{
+    color: #fff;
+    font-size: 1.2rem;
+    align-items: center;
+    text-align: center;
+}
+#home .left .socio-media .media a:hover{
+    color: rgb(206, 89, 0);
+}
+#home .left button{
+    width: 30vh;
+    height: 7vh;
+    border: none;
+    outline: none;
+    border-radius: 6px;
+    background: rgb(206, 89, 0);
+    margin-top: 20px;
+    text-align: center;
+}
+#home .left button:hover{
+    background: rgb(151, 66, 0);
+    cursor: pointer;
+    transition: .3s;
+}
+#home .left button a{
+    text-decoration: none;
+    color: #fff;
+    font-size: 1rem;
+}
+
+/* style de la partie right sous element de home */
+#home .right{
+    width: 50%;
+    overflow: hidden;
+    align-items: center;
+    justify-content: center;
+    /* background: #000; */
+}
+#home .right img{
+    width: 75vh;
+    height: 75vh;
+    align-items: center;
+    justify-content: center;
+    margin-left: 15%;
+}
+
+/* style de la partie About */
+
+#about{
+    height: 85vh;
+    background: rgb(5, 5, 76);
+    align-items: center;
+    text-align: center;
+    padding: 20px 150px;
+    color: #fff;
+}
+#about h2{
+    position: relative;
+}
+#about h2 span{
+    color: rgb(206, 89, 0);
+}
+#about h2::after{
+    content: '';
+    align-items: center;
+    text-align: center;
+    margin-left: 42.5%;
+    height: 3px;
+    display: block;
+    background: #fff;
+    width: 15%;
+}
+
+#about .about-data{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 5%;
+}
+
+/* style de la partie about qui conerne l'image */
+#about .about-data .cont-img{
+    width: 50vh;
+    height: 67vh;
+    overflow: hidden;
+    background: rgb(206, 89, 0);
+    background-image: linear-gradient(to top , rgb(206, 89, 0), rgb(5, 5, 76));
+    border-radius: 6px;
+    padding: 0px;
+}
+#about .about-data .cont-img img{
+    width: 100%;
+    height: 100%;
+}
+
+/* style de la partie about qui conerne le texte */
+#about .about-data .cont-data{
+    width: 60%;
+    height: 100%;
+    text-align: justify;
+    font-family: "Oswald", serif;
+}
+
+#about .about-data .cont-data h3{
+    margin-bottom: 30px;
+}
+#about .about-data .cont-data strong{
+    color: rgb(206, 89, 0);
+    font-weight: 600;
+}
+
+/* style de la partie SERVICES */
+
+#services{
+    height: 85vh;
+    background: #240048ed;
+    align-items: center;
+    text-align: center;
+    padding: 20px 150px;
+    color: #fff;
+}
+#services h2{
+    position: relative;
+}
+#services h2 span{
+    color: rgb(206, 89, 0);
+}
+#services h2::after{
+    content: '';
+    align-items: center;
+    text-align: center;
+    margin-left: 42.5%;
+    height: 3px;
+    display: block;
+    background: #fff;
+    width: 15%;
+}
