@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Animation d'apparition au scroll</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header>
+    <h1>Animation au Scroll avec IntersectionObserver</h1>
+    <p>Faites défiler pour voir les éléments apparaître.</p>
+  </header>
+  <main class="content">
+    <div class="element hidden">Section 1</div>
+    <div class="element hidden">Section 2</div>
+    <div class="element hidden">Section 3</div>
+    <div class="element hidden">Section 4</div>
+  </main>
+  <script src="script.js"></script>
+</body>
+</html>
+
+
+<style>
+  /* Styles de base */
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.5;
+  background-color: #f9f9f9;
+}
+
+header {
+  text-align: center;
+  padding: 50px;
+  background: #4caf50;
+  color: white;
+}
+
+main {
+  padding: 20px;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.element {
+  background: #ffffff;
+  margin: 40px 0;
+  padding: 20px;
+  border-radius: 8px;
+  opacity: 0; /* Caché par défaut */
+  transform: translateY(50px); /* Décalé initialement */
+  transition: opacity 0.6s ease, transform 0.6s ease; /* Animation */
+}
+
+.hidden {
+  opacity: 0;
+  transform: translateY(50px);
+}
+
+.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+</style>
+
+<script>
+  // Sélectionner tous les éléments à observer
+const elements = document.querySelectorAll('.element');
+
+// Fonction de gestion de l'observateur
+const observer = new IntersectionObserver((entries, observer) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      entry.target.classList.remove('hidden');
+      observer.unobserve(entry.target); // Stop observer après apparition
+    }
+  });
+}, {
+  threshold: .10 // L'élément doit être visible à 20% pour déclencher
+});
+
+// Appliquer l'observateur à chaque élément
+elements.forEach(element => observer.observe(element));
+
+</script>

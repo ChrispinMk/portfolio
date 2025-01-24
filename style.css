@@ -17,6 +17,34 @@
   html{
     scroll-behavior: smooth;
   }
+
+  /* style de la barre de scrolle */
+  .scroller{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    z-index: 1000;
+    background: linear-gradient(to right, rgb(29, 198, 213) 100%, rgba(255,148,166,0) 100%);
+    background-repeat: no-repeat;
+    background-size: 0;
+    transform-origin: left;
+    animation: scroll linear;
+    animation-timeline: scroll();
+    animation-range-start: cover 100px;
+    animation-range-end: cover 100%;
+}
+
+@keyframes scroll{
+    from{
+        background-size: 0% 5px;
+    }
+    to{
+        background-size: 100% 5px;
+    }
+}
+
 /* style de la partie de la barre de navigation */
 
 *,::after,::before{
@@ -153,24 +181,28 @@ nav .hire-btn button:hover::before{
     margin: 15px 0px;
 }
 #home .left .socio-media .media {
-    width: 20px;
-    height: 20px;
+    width: 25px;
+    height: 25px;
     padding: 5px;
     border-radius: 50px;
     border: 1px solid #fff;
     align-items: center;
     text-align: center;
     margin-right: 20px;
+    overflow: hidden;
     cursor: pointer;
 }
-#home .left .socio-media .media a{
+#home .left .socio-media .media img{
+    width: 100%;
+    height: 100%;
     color: #fff;
-    font-size: 1.2rem;
+    font-size: 1rem;
     align-items: center;
     text-align: center;
 }
-#home .left .socio-media .media a:hover{
-    color: rgb(206, 89, 0);
+#home .left .socio-media .media img:hover{
+    transform:rotate(15deg);
+    transition: .3s;
 }
 #home .left button{
     width: 30vh;
@@ -207,6 +239,19 @@ nav .hire-btn button:hover::before{
     align-items: center;
     justify-content: center;
     margin-left: 15%;
+}
+#home .right img:hover{
+    animation: img-rotate 20s linear infinite;
+    cursor: pointer;
+}
+
+@keyframes img-rotate{
+    from{
+        transform: rotate(0def);
+    }
+    to{
+        transform: rotate(360deg);
+    }
 }
 
 /* style de la partie About */
@@ -299,4 +344,31 @@ nav .hire-btn button:hover::before{
     display: block;
     background: #fff;
     width: 15%;
+}
+#services .cont-services{
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    margin-top: 8%;
+}
+#services .cont-services .service{
+    width: 28%;
+    border-radius: 6px;
+    padding: 10px 15px;
+    color: rgb(5, 5, 76);
+    background: #fff;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+}
+#services .cont-services .service:hover{
+    transition: .5s ease-in-out;
+    transform: scale(1.02);
+    cursor: pointer;
+
+}
+#services .cont-services .service img{
+    width: 70px;
+}
+
+#services .cont-services .service h3{
+    color: rgb(206, 89, 0);
 }
