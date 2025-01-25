@@ -512,3 +512,89 @@ nav .hire-btn button:hover::before{
     border-radius: 6px;
     object-fit: cover;
 } 
+
+
+/* style de la partie PORTFOLIO */
+#contact{
+    height: 60vh;
+    background: rgb(5, 5, 76);
+    align-items: center;
+    text-align: center;
+    padding: 20px 150px;
+    color: #fff;
+    justify-content: center;
+}
+#contact h2{
+    position: relative;
+}
+#contact h2 span{
+    color: rgb(206, 89, 0);
+}
+#contact h2::after{
+    content: '';
+    align-items: center;
+    text-align: center;
+    margin-left: 42.5%;
+    height: 3px;
+    display: block;
+    background: #fff;
+    width: 15%;
+}
+
+#contact .container{
+    margin-top: 5%;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-around;
+}
+#contact .container .mail, .maps, .call{
+    width: 50vh;
+    display: block;
+    align-items: center;
+    text-align: center;
+
+}
+#contact .container .mail img, .maps img, .call img{
+    width: 70px;
+    margin-bottom: 10px;
+}
+
+/* style de la partie FOOTER */
+footer{
+    height: 8vh;
+    background: #240048ed;
+    align-items: center;
+    text-align: center;
+    color: #fff;
+    padding: 10px 0px 0px 0px;
+    justify-content: center;
+    font-weight: 200;
+    font-size: 0.8rem;
+}
+
+/* style d bouton qui sert qui monter directement au dessus de la page */
+.page-up{
+    width: 30px;
+    height: 30px;
+    border: 2px solid rgb(206, 89, 0);
+    text-align: center;
+    border-radius: 50px;
+    position: fixed;
+    z-index: 10;
+    float: right;
+    bottom: 80px;
+    right: 30px;
+}
+.page-up a{
+    color: rgb(206, 89, 0);
+    font-size: 1.2rem;
+}
+.page-up:hover, a:hover{
+    transition: .3s;
+    color: #fff;
+}
+.page-up:hover{
+    transition: .3s;
+    border: 2px solid #fff;
+}
