@@ -3,59 +3,99 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Utilisation de CSS Grid</title>
+  <title>Scroll Animation</title>
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-  <div class="conteneur">
-    <div class="box une">🐸 Élément 1</div>
-    <div class="box deux">🦊 Élément 2</div>
-    <div class="box trois">🦄 Élément 3</div>
-    <div class="box quatre">🐶 Élément 4</div>
-    <div class="box cinq">🐨 Élément 5</div>
-    <div class="box six">🐒 Élément 6</div>
-    <div class="box sept">🦆 Élément 7</div>
-    <div class="box huit">🐙 Élément 8</div>
-    <div class="box neuf">🐋 Élément 9</div>
-</div>
+  <div class="container">
+    <div class="element">Element 1</div>
+    <div class="element">Element 2</div>
+    <div class="element">Element 3</div>
+    <div class="element">Element 4</div>
+    <div class="element">Element 5</div>
+    <div class="element">Element 6</div>
+    <div class="element">Element 7</div>
+    <div class="element">Element 8</div>
+    <div class="element">Element 9</div>
+    <div class="element">Element 10</div>
+  </div>
+  <script src="script.js"></script>
 </body>
 </html>
 
 <style>
-  body{
-    padding: 20px;
-  }
-  .box {
-  height: 150px;
-  background: blue;
-  border-radius: 10px;
+  /* Styles globaux */
+body {
+  margin: 30px 0px;
+  font-family: Arial, sans-serif;
+  background-color: #f0f0f0;
+  height: 200vh; /* Simuler une page longue */
+  overflow-x: hidden;
 }
 
-.conteneur {
-  position: relative;
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    grid-template-rows: 100px 100px 100px;
-    gap: 70px;
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  padding: 100px 20px;
+  align-items: center;
 }
 
-.une{
-  grid-column: 1 / 4;
+/* Styles des éléments */
+.element {
+  width: 300px;
+  height: 50px;
+  padding: 20px;
+  text-align: center;
+  background-color: #ffffff;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  opacity: 0;
+  transform: translateX(50px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
 }
 
-.deux{
-  grid-row-start: 2;
-  grid-row-end: 4;
-  background: floralwhite;
-  
+/* Apparition des éléments */
+.element.visible {
+  opacity: 1;
+  transform: translateX(0);
 }
-.trois{
-  grid-row: 2/2;
-  grid-column: 2/4;
-  background: red;
+
+/* Disparition des éléments */
+.element.hidden {
+  opacity: 0;
+  transform: translateX(50px);
 }
-.quatre{
-  grid-row: 50px;
-  grid-column: 2/4;
-  background: yellow;
-}
+
 </style>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  // Sélectionner tous les éléments à animer
+  const elements = document.querySelectorAll(".element");
+
+  // Créer l'instance d'IntersectionObserver
+  const observer = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          // Ajouter la classe 'visible' quand l'élément est dans le viewport
+          entry.target.classList.add("visible");
+          entry.target.classList.remove("hidden");
+        } else {
+          // Ajouter la classe 'hidden' quand l'élément sort du viewport
+          entry.target.classList.remove("visible");
+          entry.target.classList.add("hidden");
+        }
+      });
+    },
+    {
+      threshold: 1, // 20% de l'élément visible pour déclencher
+    }
+  );
+
+  // Observer chaque élément
+  elements.forEach((element) => observer.observe(element));
+});
+
+</script>

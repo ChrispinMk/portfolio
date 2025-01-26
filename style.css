@@ -163,6 +163,19 @@ nav .hire-btn button:hover::before{
 /* style de la partie left sous element de home */
 #home .left{
     width: 50%;
+    opacity: 0;
+    transform: translateX(-50px);
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+/* Apparition des éléments */
+#home .left.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /* Disparition des éléments */
+#home .left.hidden {
+    opacity: 0;
+    transform: translateX(-50px);
 }
 #home .left h2{
     font-size: 2rem;
@@ -231,7 +244,19 @@ nav .hire-btn button:hover::before{
     overflow: hidden;
     align-items: center;
     justify-content: center;
-    /* background: #000; */
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+/* Apparition des éléments */
+#home .right.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /* Disparition des éléments */
+#home .right.hidden {
+    opacity: 0;
+    transform: translateX(50px);
 }
 #home .right img{
     width: 75vh;
@@ -255,7 +280,6 @@ nav .hire-btn button:hover::before{
 }
 
 /* style de la partie About */
-
 #about{
     height: 85vh;
     background: rgb(5, 5, 76);
@@ -263,6 +287,21 @@ nav .hire-btn button:hover::before{
     text-align: center;
     padding: 20px 150px;
     color: #fff;
+}
+#home .about-data .cont-img{
+    opacity: 0;
+    transform: translateX(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+/* Apparition des éléments */
+#home .about-data .cont-img.visible {
+    opacity: 1;
+    transform: translateX(0);
+  }
+  /* Disparition des éléments */
+  #home .about-data .cont-img.hidden {
+    opacity: 0;
+    transform: translateX(50px);
 }
 #about h2{
     position: relative;

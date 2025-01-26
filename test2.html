@@ -6,85 +6,50 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="scroller"></div>
-    <div class="container">
-        <h2>Scroll Effect (no JS)</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed voluptas, sit fuga rem quia iure iusto hic expedita temporibus alias perferendis eaque praesentium. Beatae exercitationem facilis quisquam neque. Illo, obcaecati!
-        Porro quas debitis aspernatur aliquam quis architecto facilis id inventore earum esse dolore nobis similique magnam harum numquam aperiam perspiciatis velit, incidunt veritatis. Odit sunt officiis eligendi vero vitae recusandae.
-        Alias ipsum magnam consequuntur error suscipit atque, officiis culpa harum sapiente velit quisquam reiciendis labore! Iste dolore repellat porro ea expedita nisi eum non ad perspiciatis. Commodi accusamus itaque quae.</p>
-
-        <h2>Scroll Effect (no JS)</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed voluptas, sit fuga rem quia iure iusto hic expedita temporibus alias perferendis eaque praesentium. Beatae exercitationem facilis quisquam neque. Illo, obcaecati!
-        Porro quas debitis aspernatur aliquam quis architecto facilis id inventore earum esse dolore nobis similique magnam harum numquam aperiam perspiciatis velit, incidunt veritatis. Odit sunt officiis eligendi vero vitae recusandae.
-        Alias ipsum magnam consequuntur error suscipit atque, officiis culpa harum sapiente velit quisquam reiciendis labore! Iste dolore repellat porro ea expedita nisi eum non ad perspiciatis. Commodi accusamus itaque quae.</p>
-
-        <h2>Scroll Effect (no JS)</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed voluptas, sit fuga rem quia iure iusto hic expedita temporibus alias perferendis eaque praesentium. Beatae exercitationem facilis quisquam neque. Illo, obcaecati!
-        Porro quas debitis aspernatur aliquam quis architecto facilis id inventore earum esse dolore nobis similique magnam harum numquam aperiam perspiciatis velit, incidunt veritatis. Odit sunt officiis eligendi vero vitae recusandae.
-        Alias ipsum magnam consequuntur error suscipit atque, officiis culpa harum sapiente velit quisquam reiciendis labore! Iste dolore repellat porro ea expedita nisi eum non ad perspiciatis. Commodi accusamus itaque quae.</p>
-
-        <img src="./images/développeur chrispin.png" alt="">
-
-        <h2>Scroll Effect (no JS)</h2>
-        <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Sed voluptas, sit fuga rem quia iure iusto hic expedita temporibus alias perferendis eaque praesentium. Beatae exercitationem facilis quisquam neque. Illo, obcaecati!
-        Porro quas debitis aspernatur aliquam quis architecto facilis id inventore earum esse dolore nobis similique magnam harum numquam aperiam perspiciatis velit, incidunt veritatis. Odit sunt officiis eligendi vero vitae recusandae.
-        Alias ipsum magnam consequuntur error suscipit atque, officiis culpa harum sapiente velit quisquam reiciendis labore! Iste dolore repellat porro ea expedita nisi eum non ad perspiciatis. Commodi accusamus itaque quae.</p>
-    </div>
+    
 </body>
 </html>
 
-<style>
-    body{
-        padding: 20px 200px;
-        text-align: justify;
-        align-items: center;
-    }
-    h2{
-        text-align: center;
-        font-size: 2rem;
-        padding: 24px;
-        animation: reveal linear;
-        animation-timeline: view();
-        animation-range-start: cover 0%;
-        animation-range-end: contain 50%;
-    }
-    img{
-        width: 50vh ;
-    }
-    @keyframes reveal{
-        from{
-            transform: scale(0);
-            opacity: 0;
-        }
-        to{
-            transform: scale(1);
-            opacity: 1;
-        }
-    }
+<script>
+    if (document.querySelector('#weddings')) { 
 
-    .scroller{
-        position: fixed;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 5px;
-        z-index: 1000;
-        background: linear-gradient(to right, rgb(29, 198, 213) 100%, rgba(255,148,166,0) 100%);
-        background-repeat: no-repeat;
-        background-size: 0;
-        transform-origin: left;
-        animation: scroll linear;
-        animation-timeline: scroll();
-        animation-range-start: cover 100px;
-        animation-range-end: cover 100%;
-    }
+let observer_1;
+let Element_1;
+let prevRatio = 0.0;
+let options = {
+    root: null,
+    rootMargin: "0px",
+    threshold: buildThresholdList()
+};
 
-    @keyframes scroll{
-        from{
-            background-size: 0% 5px;
-        }
-        to{
-            background-size: 100% 5px;
-        }
-    }
-</style>
+// Set things up
+        Element_1 = document.querySelector("#img-1");
+        initObserver();
+
+//////////////////////////////////////////////////////////////////////////////
+
+function initObserver() {
+    observer_1 = new IntersectionObserver(callback_1, options);
+    observer_1.observe(Element_1);
+}
+
+/////////////////////////////////////////////////////////////////////////////
+
+function buildThresholdList() {...}
+
+/////////////////////////////////////////////////////////////////////////////
+
+var gallerySroll_1 = anime({...});
+
+////////////////////////////////////////////////////////////////////////////
+
+function callback_1 (entries, observer_1) {
+  entries.forEach((entry) => {
+    if(entry.boundingClientRect.top <= 0 && entry.intersectionRatio != prevRatio){
+                gallerySroll_1.seek(gallerySroll_1.duration * (entry.intersectionRatio));
+    }else{ gallerySroll_1.seek(1000); }
+    prevRatio = entry.intersectionRatio;
+  });
+}
+}
+</script>
