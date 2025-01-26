@@ -5,6 +5,10 @@ const home_right_Element = document.querySelectorAll(".right");
 const about_contImg = document.querySelectorAll(".cont-img");
 const about_contData = document.querySelectorAll(".cont-data");
 const services = document.querySelectorAll(".service");
+const langage = document.querySelectorAll(".langage");
+const progressCont = document.querySelectorAll(".cont-progress");
+const pourcent = document.querySelectorAll(".pourcent");
+const portfolio = document.querySelectorAll(".folio");
 
 // Créer l'instance d'IntersectionObserver
 const observer = new IntersectionObserver(
@@ -32,4 +36,8 @@ const observer = new IntersectionObserver(
     about_contImg.forEach((element) => observer.observe(element));
     about_contData.forEach((element) => observer.observe(element));
     services.forEach((element) => observer.observe(element));
+    langage.forEach((element) => observer.observe(element));
+    progressCont.forEach((element) => observer.observe(element));
+    pourcent.forEach((element) => observer.observe(element));
+    portfolio.forEach((element) => observer.observe(element));
 });
