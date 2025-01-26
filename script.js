@@ -1,3 +1,8 @@
+/*
+=======================================================================================================================================
+==================================== CODES POUR L'ANIMATION D'APPARITION DES ELEMENT HTML =============================================
+=======================================================================================================================================
+*/
 document.addEventListener("DOMContentLoaded", () => {
 // Sélectionner tous les éléments à animer
 const home_left_Element = document.querySelectorAll(".left");
@@ -9,6 +14,7 @@ const langage = document.querySelectorAll(".langage");
 const progressCont = document.querySelectorAll(".cont-progress");
 const pourcent = document.querySelectorAll(".pourcent");
 const portfolio = document.querySelectorAll(".folio");
+const contact = document.querySelectorAll(".contact");
 
 // Créer l'instance d'IntersectionObserver
 const observer = new IntersectionObserver(
@@ -40,4 +46,5 @@ const observer = new IntersectionObserver(
     progressCont.forEach((element) => observer.observe(element));
     pourcent.forEach((element) => observer.observe(element));
     portfolio.forEach((element) => observer.observe(element));
+    contact.forEach((element) => observer.observe(element));
 });

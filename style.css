@@ -687,7 +687,47 @@ nav .hire-btn button:hover::before{
     display: block;
     align-items: center;
     text-align: center;
-
+    opacity: 0;
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+#contact .container .mail{
+    transform: translateY(-50px);
+}
+/* Aparition des éléments */
+#contact .container .mail.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Disparition des éléments */
+  #contact .container .mail.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
+}
+#contact .container .maps{
+    transform: translateY(50px);
+}
+/* Aparition des éléments */
+#contact .container .maps.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Disparition des éléments */
+  #contact .container .maps.hidden {
+    opacity: 0;
+    transform: translateY(50px);
+}
+#contact .container .call{
+    transform: translateY(50px);
+}
+/* Aparition des éléments */
+#contact .container .call.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Disparition des éléments */
+  #contact .container .call.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
 }
 #contact .container .mail img, .maps img, .call img{
     width: 70px;
