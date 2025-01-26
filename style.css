@@ -288,21 +288,6 @@ nav .hire-btn button:hover::before{
     padding: 20px 150px;
     color: #fff;
 }
-#home .about-data .cont-img{
-    opacity: 0;
-    transform: translateX(50px);
-    transition: opacity 0.8s ease, transform 0.8s ease;
-}
-/* Apparition des éléments */
-#home .about-data .cont-img.visible {
-    opacity: 1;
-    transform: translateX(0);
-  }
-  /* Disparition des éléments */
-  #home .about-data .cont-img.hidden {
-    opacity: 0;
-    transform: translateX(50px);
-}
 #about h2{
     position: relative;
 }
@@ -336,6 +321,19 @@ nav .hire-btn button:hover::before{
     background-image: linear-gradient(to top , rgb(206, 89, 0), rgb(5, 5, 76));
     border-radius: 6px;
     padding: 0px;
+    opacity: 0;
+    transform: translateY(-50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+/* Apparition des éléments */
+#about .about-data .cont-img.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Disparition des éléments */
+#about .about-data .cont-img.hidden {
+    opacity: 0;
+    transform: translateY(-50px);
 }
 #about .about-data .cont-img img{
     width: 100%;
@@ -348,6 +346,19 @@ nav .hire-btn button:hover::before{
     height: 100%;
     text-align: justify;
     font-family: "Oswald", serif;
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.8s ease, transform 0.8s ease;
+}
+/* Apparition des éléments */
+#about .about-data .cont-data.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Disparition des éléments */
+  #about .about-data .cont-data.hidden {
+    opacity: 0;
+    transform: translateY(50px);
 }
 
 #about .about-data .cont-data h3{
@@ -397,6 +408,28 @@ nav .hire-btn button:hover::before{
     color: rgb(5, 5, 76);
     background: #fff;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    opacity: 0;
+    transform: translateY(50px);
+    
+}
+#services .cont-services .service:nth-child(1){
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+#services .cont-services .service:nth-child(2){
+    transition: opacity 0.6s ease, transform 0.6s ease;
+}
+#services .cont-services .service:nth-child(3){
+    transition: opacity 0.9s ease, transform 0.9s ease;
+}
+/* Apparition des éléments */
+#services .cont-services .service.visible {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  /* Disparition des éléments */
+#services .cont-services .service.hidden {
+    opacity: 0;
+    transform: translateY(50px);
 }
 #services .cont-services .service:hover{
     transition: .5s ease-in-out;

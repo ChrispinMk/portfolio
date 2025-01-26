@@ -3,6 +3,8 @@ document.addEventListener("DOMContentLoaded", () => {
 const home_left_Element = document.querySelectorAll(".left");
 const home_right_Element = document.querySelectorAll(".right");
 const about_contImg = document.querySelectorAll(".cont-img");
+const about_contData = document.querySelectorAll(".cont-data");
+const services = document.querySelectorAll(".service");
 
 // Créer l'instance d'IntersectionObserver
 const observer = new IntersectionObserver(
@@ -28,4 +30,6 @@ const observer = new IntersectionObserver(
     home_left_Element.forEach((element) => observer.observe(element));
     home_right_Element.forEach((element) => observer.observe(element));
     about_contImg.forEach((element) => observer.observe(element));
+    about_contData.forEach((element) => observer.observe(element));
+    services.forEach((element) => observer.observe(element));
 });
