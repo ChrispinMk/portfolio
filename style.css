@@ -1024,19 +1024,20 @@ footer{
 
 
 
+}
 
 
-    /* ============================================================================================ */
-/* =================== MEDIA QUERIES POUR LES ECRANS DE 720pixels MAX ========================= */
-/* ============================================================================================ */
+
+/* ========================================================================================================================= */
+/* =================== MEDIA QUERIES POUR LES ECRANS QUI SONT ENTRE 701pixels MIN et 900pixels MAX ========================= */
+/* ========================================================================================================================= */
 
 @media screen and (min-width:701px) and (max-width:900px){
     /* menu hamburger */
     nav{
-        height: 8vh;
+        height: 10vh;
         padding: 0px 25px;
         overflow: visible;
-        background: red;
     }
     nav .nav-name img{
         width: 35px;
@@ -1076,9 +1077,6 @@ footer{
     }
     nav ul li{
         margin: 25px;
-    }
-    nav  .menu-btn{
-        display: none;
     }
     nav .hamburger{
         width: 35px;
@@ -1122,21 +1120,22 @@ footer{
     }
 
     #home .left .socio-media{
-        margin: 20px 0px 10px 80px ;
+        margin: 20px 0px 10px 50vh ;
     }
     #home .left button{
-        width: 25vh;
-        height: 6vh;
+        width: 30vh;
+        height: 8vh;
     }
     /* style de la partie right sous element de home */
     #home .right{
-        width: 100%;
-        padding: 0px 50px 0px 0px;
+        width: 40%;
+        height: 40%;
+        padding: 0px 100px 0px 0px;
         margin-bottom: 25px;
     }
     #home .right img{
-        width: 40vh;
-        height: 40vh;
+        width: 100%;
+        height: 100%;
         margin-right: 50px;
     }
 
@@ -1193,7 +1192,7 @@ footer{
         padding: 35px;
     }
     #portfolio .container .folio{
-        width: 100%;
+        width: 48%;
         height: 35vh;
         margin-top: 10px;
     }
@@ -1205,7 +1204,7 @@ footer{
     }
 
     #contact .container{
-        flex-direction: column;
+        /* flex-direction: column; */
     }
     #contact .container .mail, .maps, .call{
         width: 100%;
@@ -1217,7 +1216,7 @@ footer{
     }
     #contact .container .mail img{
         position: relative;
-        left: 32%;
+        left: 15%;
         bottom: 10px;
     }
     /* style de la partie FOOTER */
@@ -1251,16 +1250,138 @@ footer{
         transition: .3s;
         border: 2px solid #fff;
     }
+}
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* ======================================================================================================== */
+/* =================== MEDIA QUERIES POUR LES ECRANS QUI SONT ENTRE 720pixels MAX ========================= */
+/* ======================================================================================================== */
+
+@media screen and (min-width:901px) and (max-width:1250px){
+    /* menu hamburger */
+    nav{
+        height: 10vh;
+        padding: 0px 20px;
+        overflow: visible;
+    }
+    /* pour la partie home ou accueil */
+    #home{
+        padding: 50px 50px 30px;
+        display: flex;
+    }
     
+    #home .left button{
+        width: 30vh;
+        height: 8vh;
+    }
+    /* style de la partie right sous element de home */
+    #home .right{
+        width: 60vh;
+        height: 60vh;
+        padding: 0px 100px 0px 0px;
+    }
+    #home .right img{
+        width: 100%;
+        height: 100%;
+        margin-right: 50px;
+    }
+
+    /* style de la partie About */
+    #about{
+        height: auto;
+        padding: 20px 50px;
+    }
     
+    /* style de la partie about qui conerne l'image */
+    #about .about-data .cont-img{
+        width: 55vh;
+        height: 55vh;
+        object-fit: cover;
+        margin-right: 50px;
+    }
+    /* style de la partie about qui conerne le texte */
+    #about .about-data .cont-data{
+        padding-top: 30px;
+        width: 100%;
+    }
     
 
+    /* style de la partie SERVICES */
+    #services{
+        height: auto;
+        padding: 20px 30px;
+    }
+    
+    /* style de la partie SKILLS */
+    #skills{
+        height: auto;
+        padding: 20px 100px;
+    }
+
+
+    /* style de la partie PORTFOLIO */
+    #portfolio{
+        height: auto;
+        padding: 35px;
+    }
+    #portfolio .container .folio{
+        width: 32%;
+        height: 35vh;
+        margin-top: 10px;
+    }
+
+    /* style de la partie PORTFOLIO */
+    #contact{
+        
+        padding: 20px 30px;
+    }
 
 
 
+    /* style de la partie FOOTER */
+    footer{
+        height: auto;
+        padding: 10px ;
+    }
 
-
-
-
+    /* style d bouton qui sert qui monter directement au dessus de la page */
+    .page-up{
+        width: 30px;
+        height: 30px;
+        border: 2px solid rgb(206, 89, 0);
+        text-align: center;
+        border-radius: 50px;
+        position: fixed;
+        z-index: 10;
+        float: right;
+        bottom: 70px;
+        right: 10px;
+    }
+    .page-up a{
+        color: rgb(206, 89, 0);
+        font-size: 1.2rem;
+    }
+    .page-up:hover, a:hover{
+        transition: .3s;
+        color: #fff;
+    }
+    .page-up:hover{
+        transition: .3s;
+        border: 2px solid #fff;
+    }
 }
