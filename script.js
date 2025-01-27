@@ -48,3 +48,29 @@ const observer = new IntersectionObserver(
     portfolio.forEach((element) => observer.observe(element));
     contact.forEach((element) => observer.observe(element));
 });
+
+
+/*
+=======================================================================================================================================
+==================================== CODES POUR DECLENCHER LE MENU =============================================
+=======================================================================================================================================
+*/
+
+let hamburger = document.querySelector(".hamburger");
+let hireMeBtn = document.querySelector(".hire-btn");
+let menu = document.querySelector("ul");
+
+hamburger.addEventListener('click', () =>{
+    hamburger.classList.toggle('active');
+    menu.classList.toggle('active')
+    hireMeBtn.classList.toggle("showBtn")
+})
+
+// fermer le menu apres un clic sur un onglet de menu
+let onglet = document.querySelectorAll('li');
+    onglet.forEach(element => {
+    element.addEventListener('click', () => {
+        hamburger.classList.toggle('active');
+        menu.classList.toggle('active');
+    })
+});
